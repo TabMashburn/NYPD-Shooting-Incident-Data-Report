@@ -1,6 +1,6 @@
 ---
 title: "Week3 Project"
-date: "05/03/2022"
+date: "05/21/2022"
 output: html_document
 ---
 ## Introduction
@@ -27,7 +27,7 @@ library(tidyr)
 
 Below is a brief overview of the data structure.
 
-```{r import data, message=FALSE, warning=FALSE,  cache=TRUE}
+```{r import data, message=FALSE, warning=FALSE}
 library(tidyverse)
 data <- read_csv("https://data.cityofnewyork.us/api/views/833y-fsy8/rows.csv?accessType=DOWNLOAD")
 ```
@@ -144,7 +144,7 @@ We use a linear model to estimate relationship between total number of shootings
 
 ```{r linear model, message=FALSE}
 #income:tidy data contains median household income by borough over years (from2006-2019)
-NYC_median_income <- read_csv("./data/NYC_median_income.csv")
+NYC_median_income <- read_csv("https://raw.githubusercontent.com/shinnaL/NYPD-Shooting-Incident-Data-Report/main/NYC_median_income.csv")
 income <- NYC_median_income[1:5,]
 income <-pivot_longer(income,cols = seq(2,15),names_to = "year",values_to = "income")
 income <-income %>%
